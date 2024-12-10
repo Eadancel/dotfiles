@@ -10,27 +10,19 @@
         "hyprland/workspaces",
         "hyprland/submap",
         "sway/scratchpad",
-        "custom/media",
-        "custom/weather"
     ],
     "modules-center": [
-        "hyprland/window"
+        // "hyprland/window",
+        "clock",
+        "custom/weather",
     ],
     "modules-right": [
         "mpd",
         "idle_inhibitor",
         "pulseaudio",
-        "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
-        "battery",
-        "battery#bat2",
-        "clock",
         "tray",
         "custom/power"
     ],
@@ -107,10 +99,36 @@
         // "icon-size": 21,
         "spacing": 10
     },
+    // "clock": {
+    //     // "timezone": "America/New_York",
+    //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    //     "format-alt": "{:%Y-%m-%d}"
+    // },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        // "format": "{:%H:%M}  ",
+        "format": "{:L%A, %B %d, %Y (%R)}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "locale"        : "es_CL.UTF-8",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
     "cpu": {
         "format": "{usage}% ",
@@ -194,7 +212,7 @@
         "interval": 5,
         "exec": "$HOME/.config/waybar/bin/playerinfo.sh",
         "max-length": 40,
-        "tooltip": true,
+        "tooltip": true
     },
     "custom/power": {
         "format" : "⏻ ",
@@ -209,7 +227,11 @@
 		}
     },
     "custom/weather":{
-        "interval" : 600,
-        "exec" : "curl -s \"wttr.in/?format=%t%20%f%20%c\" "
+        //shows the current weather and forecast
+        "tooltip" : true,
+        "format" : "{}",
+        "interval" : 3600,
+        "exec" : "~/.config/waybar/bin/wttr.py",
+        "return-type" : "json"
     }
 }

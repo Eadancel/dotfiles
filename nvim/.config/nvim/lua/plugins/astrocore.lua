@@ -32,11 +32,20 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+        guifont = "Source Code Pro:h14",  -- neovide font
+        linespace = 0  --
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        -- configure scaling
+         neovide_scale_factor = 0.8,
+        -- configure padding
+         neovide_padding_top = 0,
+         neovide_padding_bottom = 0,
+         neovide_padding_right = 0,
+         neovide_padding_left = 0,
       },
     },
     -- Mappings can be configured through AstroCore as well.

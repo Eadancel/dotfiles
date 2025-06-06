@@ -9,7 +9,11 @@ return {
     ensure_installed = {
       "lua",
       "vim",
+      "todotxt",
       -- add more arguments for adding more treesitter parsers
     },
+    highlight = {
+      enable = true
+    }
   },
 }

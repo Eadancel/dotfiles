@@ -19,10 +19,11 @@
         "mpd",
         // "idle_inhibitor",
         "pulseaudio",
+        "network",
         "cpu",
-        "memory",
         "disk",
         "temperature",
+        "battery",
         "tray",
         "custom/power"
     ],
@@ -105,8 +106,8 @@
     //     "format-alt": "{:%Y-%m-%d}"
     // },
     "clock": {
-        // "format": "{:%H:%M}  ",
-        "format": "{:L%A, %B %d, %Y (%R)}",
+        "format": "{:%H:%M}  ",
+        // "format": "{:L%A, %B %d, %Y (%R)}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "locale"        : "es_CL.UTF-8",
         "calendar": {
@@ -181,7 +182,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",

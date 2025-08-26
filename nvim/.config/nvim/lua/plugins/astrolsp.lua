@@ -45,6 +45,11 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      yamlls = {
+        settings = {
+          
+        }
+      }
     },
     -- customize how language servers are attached
     handlers = {

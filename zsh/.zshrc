@@ -98,6 +98,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 #Databricks token
 export DATABRICKS_API_BASE="https://dbc-d9732d78-822a.cloud.databricks.com/serving-endpoints"
+export DATABRICKS_API_HOST=$(pass show Databricks/DEV/host) 
+export DATABRICKS_API_KEY=$(pass show Databricks/DEV/rosasli_token)
 export LITELLM_LOG='DEBUG'
 export ANTHROPIC_BASE_URL=http://localhost:4000
 export ANTHROPIC_MODEL=databricks/databricks-claude-3-7-sonnet

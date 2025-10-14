@@ -96,3 +96,12 @@ export EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#Databricks token
+export DATABRICKS_API_BASE="https://dbc-d9732d78-822a.cloud.databricks.com/serving-endpoints"
+export LITELLM_LOG='DEBUG'
+export ANTHROPIC_BASE_URL=http://localhost:4000
+export ANTHROPIC_MODEL=databricks/databricks-claude-3-7-sonnet
+export ANTHROPIC_API_KEY="your-api-key-here"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"

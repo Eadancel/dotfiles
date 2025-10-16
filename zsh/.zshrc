@@ -75,6 +75,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias lg='lazygit'
 
 #Shell integrations
 eval "$(fzf --zsh)"
@@ -92,7 +93,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 export EDITOR=nvim
-
+export PASSWORD_STORE_DIR=~/.password-store
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
